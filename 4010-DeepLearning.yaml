@@ -9,3 +9,6 @@ dependencies:
   - matplotlib
   - scikit-learn
   - pytorch
+variables:
+  # conda-forge's llvm-openmp ships libomp.dll and libiomp5md.dll as the same runtime; torch and MKL each load one, which aborts with OMP Error #15
+  KMP_DUPLICATE_LIB_OK: "TRUE"
